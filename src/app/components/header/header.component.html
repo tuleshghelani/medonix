@@ -1,0 +1,184 @@
+<!-- Premium Header Component -->
+<header class="premium-header" [class.sticky]="isSticky">
+  <!-- Main Navigation Header -->
+  <div class="main-header">
+    <div class="container">
+      <!-- Company Logo -->
+      <div class="brand-logo">
+        <a routerLink="/">
+          <img src="assets/logo/logo.png" alt="Medonix Logo" width="auto" height="70">
+        </a>
+      </div>
+
+      <div class="nav-and-actions">
+        <!-- Desktop Navigation Menu -->
+        <nav class="main-nav" aria-label="Main Navigation">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="/" 
+                routerLinkActive="active" 
+                [routerLinkActiveOptions]="{exact: true}"
+                class="nav-link">
+                <span>HOME</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/about-us" 
+                routerLinkActive="active"
+                class="nav-link">
+                <span>ABOUT US</span>
+              </a>
+            </li>
+            <!-- <li class="nav-item has-submenu" [class.active-dropdown]="activeSubmenu === 'services'">
+              <a href="/services" 
+                routerLinkActive="active"
+                class="nav-link dropdown-toggle"
+                (click)="toggleSubmenu('services', $event)">
+                <span>SERVICES</span>
+                <i class="fas fa-chevron-down dropdown-icon"></i>
+              </a>
+              <div class="submenu" [class.active]="activeSubmenu === 'services'">
+                <ul class="submenu-list">
+                  <li *ngFor="let item of serviceSubmenuItems">
+                    <a [href]="item.url" routerLinkActive="active">
+                      <span>{{ item.name }}</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="/gallery" 
+                routerLinkActive="active"
+                class="nav-link">
+                <span>GALLERY</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/certificates" 
+                routerLinkActive="active"
+                class="nav-link">
+                <span>CERTIFICATE</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/contact-us" 
+                routerLinkActive="active"
+                class="nav-link">
+                <span>CONTACT US</span>
+              </a>
+            </li> -->
+          </ul>
+        </nav>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+          <!-- Mobile Menu Toggle Button -->
+          <button class="menu-toggle" 
+                  (click)="toggleMobileMenu()"
+                  [class.active]="isMobileMenuOpen"
+                  aria-label="Toggle Menu">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Menu -->
+  <div class="mobile-nav" [class.active]="isMobileMenuOpen">
+    <nav class="mobile-menu">
+      <!-- Mobile Navigation Links -->
+      <ul class="mobile-nav-list">
+        <li>
+          <a href="/" 
+             routerLinkActive="active" 
+             [routerLinkActiveOptions]="{exact: true}"
+             (click)="closeMobileMenu()">
+            <span>HOME</span>
+          </a>
+        </li>
+        <li>
+          <a href="/about-us" 
+             routerLinkActive="active"
+             (click)="closeMobileMenu()">
+            <span>ABOUT US</span>
+          </a>
+        </li>
+        <li class="has-submenu">
+          <a href="javascript:void(0)" 
+             [class.active]="activeSubmenu === 'mobile-services'"
+             (click)="toggleSubmenu('mobile-services', $event)">
+            <span>SERVICES</span>
+            <i class="fas fa-chevron-down" [class.rotate]="activeSubmenu === 'mobile-services'"></i>
+          </a>
+          <ul class="mobile-submenu" [class.active]="activeSubmenu === 'mobile-services'">
+            <li *ngFor="let item of serviceSubmenuItems">
+              <a [href]="item.url" routerLinkActive="active" (click)="closeMobileMenu()">
+                <span>{{ item.name }}</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/gallery" 
+             routerLinkActive="active"
+             (click)="closeMobileMenu()">
+            <span>GALLERY</span>
+          </a>
+        </li>
+        <li>
+          <a href="/certificates" 
+             routerLinkActive="active"
+             (click)="closeMobileMenu()">
+            <span>CERTIFICATE</span>
+          </a>
+        </li>
+        <li>
+          <a href="/contact-us" 
+             routerLinkActive="active"
+             (click)="closeMobileMenu()">
+            <span>CONTACT US</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Mobile Contact Information -->
+      <div class="mobile-contact-info">
+        <a href="tel:+911234567890" class="mobile-contact-link">
+          <i class="fas fa-phone-volume"></i>
+          <span>+91 1234567890</span>
+        </a>
+        <a href="tel:+918980392009" class="mobile-contact-link">
+          <i class="fas fa-phone-volume"></i>
+          <span>+91 1234567890</span>
+        </a>
+        <a href="mailto:info@shreeganeshcolouranodize.com" class="mobile-contact-link">
+          <i class="fas fa-envelope-open"></i>
+          <span>info&#64;shreeganeshcolouranodize.com</span>
+        </a>
+        
+        <!-- Mobile Social Links -->
+        <div class="mobile-social-links">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Background Overlay for Mobile Menu -->
+  <div class="backdrop" [class.active]="isMobileMenuOpen" (click)="closeMobileMenu()"></div>
+</header>

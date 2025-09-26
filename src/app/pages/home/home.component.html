@@ -1,0 +1,275 @@
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-slider">
+    <div class="slide" [ngClass]="{'active': currentSlide === 0}">
+      <div class="slide-content">
+        <h1 data-aos="fade-up">Advanced Surgical Instruments</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Premium, clinician‑centric products engineered for precision, safety and performance</p>
+        <a routerLink="/about" class="btn btn-primary" data-aos="fade-up" data-aos-delay="400">Explore Medonix</a>
+      </div>
+      <div class="overlay"></div>
+      <div class="bg-image" style="background-image: url('/assets/home/slider-1.jpeg');"></div>
+    </div>
+    
+    <div class="slide" [ngClass]="{'active': currentSlide === 1}">
+      <div class="slide-content">
+        <h1 data-aos="fade-up">Reliable, Clinician‑Centric Design</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Ergonomic, dependable instruments aligned to real surgical workflows</p>
+        <a routerLink="/contact" class="btn btn-primary" data-aos="fade-up" data-aos-delay="400">Request Catalogue</a>
+      </div>
+      <div class="overlay"></div>
+      <div class="bg-image" style="background-image: url('/assets/home/slider-2.jpeg');"></div>
+    </div>
+    
+    <div class="slide" [ngClass]="{'active': currentSlide === 2}">
+      <div class="slide-content">
+        <h1 data-aos="fade-up">Precision. Safety. Performance.</h1>
+        <p data-aos="fade-up" data-aos-delay="200">From operating room essentials to advanced surgical tools</p>
+        <a routerLink="/contact" class="btn btn-primary" data-aos="fade-up" data-aos-delay="400">Talk to Experts</a>
+      </div>
+      <div class="overlay"></div>
+      <div class="bg-image" style="background-image: url('/assets/home/slider-1.jpeg');"></div>
+    </div>
+    
+    <div class="slide" [ngClass]="{'active': currentSlide === 3}">
+      <div class="slide-content">
+        <h1 data-aos="fade-up">Trusted Surgitech Partner</h1>
+        <p data-aos="fade-up" data-aos-delay="200">ISO‑aligned quality systems and modern manufacturing practices</p>
+        <a routerLink="/contact" class="btn btn-primary" data-aos="fade-up" data-aos-delay="400">Get a Quote</a>
+      </div>
+      <div class="overlay"></div>
+      <div class="bg-image" style="background-image: url('/assets/home/slider-2.jpeg');"></div>
+    </div>
+    
+    <div class="slider-controls">
+      <button class="prev" (click)="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+      <div class="indicators">
+        <button *ngFor="let slide of slides; let i = index" 
+                [ngClass]="{'active': currentSlide === i}"
+                (click)="goToSlide(i)"></button>
+      </div>
+      <button class="next" (click)="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- Tagline Section -->
+<section class="tagline-section">
+  <div class="container">
+    <div class="tagline-content" data-aos="fade-up">
+      <h2>Innovating Surgical Care</h2>
+      <div class="tagline-divider"></div>
+      <p>Premium instruments that empower clinicians with reliable, modern technology.</p>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" data-aos="fade-right">
+        <h2 class="section-title">About Medonix Surgitech Pvt Ltd</h2>
+        <p class="lead">Technology‑driven manufacturer of premium surgical instruments.</p>
+        <p>Medonix Surgitech Pvt Ltd is committed to delivering advanced solutions that enhance healthcare outcomes. We design and manufacture reliable, ergonomic instruments built around modern clinical workflows.</p>
+        <p>Our mission is to empower medical professionals with innovative, safe, and performance‑driven products backed by rigorous quality systems and responsive support.</p>
+        <a routerLink="/about" class="btn btn-secondary mt-4">Learn More About Us</a>
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <div class="about-image">
+          <img src="assets/home/surgitech-products-1.jpeg" alt="Medonix Surgitech modern manufacturing facility" class="img-fluid rounded shadow" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services" id="services">
+  <div class="container">
+    <h2 class="section-title text-center" data-aos="fade-up">Product Categories</h2>
+    <p class="text-center lead mb-5" data-aos="fade-up" data-aos-delay="100">Comprehensive instruments and solutions engineered for reliability and performance</p>
+    
+    <div class="row">
+      <div class="col-md-4" *ngFor="let service of services; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas {{ service.icon }}"></i>
+          </div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+          <ul class="benefits-list">
+            <li *ngFor="let benefit of service.benefits">
+              <i class="fas fa-check"></i> {{ benefit }}
+            </li>
+          </ul>
+          <!-- <a [routerLink]="'/services/' + service.title.toLowerCase().replace(' ', '-')" class="btn btn-outline">Learn More</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process Section -->
+<section class="process bg-light">
+  <div class="container">
+    <h2 class="section-title text-center" data-aos="fade-up">Our Quality Process</h2>
+    <p class="text-center lead mb-5" data-aos="fade-up" data-aos-delay="100">From clinician feedback to final QA—every product undergoes rigorous validation</p>
+    
+    <div class="process-steps">
+      <div class="process-step" data-aos="fade-up">
+        <div class="step-number">01</div>
+        <div class="step-content">
+        <h3>User Research & Requirement Capture</h3>
+          <p>We collaborate with clinicians to understand real-world needs and define precise product requirements.</p>
+        </div>
+      </div>
+      
+      <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+        <div class="step-number">02</div>
+        <div class="step-content">
+        <h3>Design & Prototyping</h3>
+          <p>Rapid prototyping, ergonomic testing, and safety reviews aligned with clinical workflows.</p>
+        </div>
+      </div>
+      
+      <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+        <div class="step-number">03</div>
+        <div class="step-content">
+        <h3>Manufacturing</h3>
+          <p>Precision manufacturing using modern processes with strict in-process inspections.</p>
+        </div>
+      </div>
+      
+      <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+        <div class="step-number">04</div>
+        <div class="step-content">
+        <h3>Quality Control</h3>
+          <p>Mechanical and functional testing to ensure safety, consistency and performance.</p>
+        </div>
+      </div>
+      
+      <div class="process-step" data-aos="fade-up" data-aos-delay="400">
+        <div class="step-number">05</div>
+        <div class="step-content">
+        <h3>Delivery & Support</h3>
+          <p>Timely delivery, training material, and responsive post-sales support.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="why-us">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" data-aos="fade-right">
+        <div class="why-us-image">
+          <img src="assets/home/surgitech-products-2.jpeg" alt="Quality control for Medonix Surgitech products" class="img-fluid rounded shadow" loading="lazy" decoding="async">
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <h2 class="section-title">Why Choose Medonix</h2>
+        <p class="lead">Engineered for precision, usability and long‑term reliability.</p>
+        
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Superior Quality</h3>
+            <p>ISO‑aligned systems and rigorous QA processes ensure safety and dependable performance.</p>
+          </div>
+        </div>
+        
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Technical Expertise</h3>
+            <p>Experienced engineering team with deep domain knowledge across surgical specialties.</p>
+          </div>
+        </div>
+        
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-tasks"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Customized Solutions</h3>
+            <p>Tailored instruments and kits built to your specifications and clinical protocols.</p>
+          </div>
+        </div>
+        
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-truck"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Reliable Service</h3>
+            <p>Consistent quality, on‑time delivery and responsive post‑sales support.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials bg-light">
+  <div class="container">
+    <h2 class="section-title text-center" data-aos="fade-up">Client Testimonials</h2>
+    <p class="text-center lead mb-5" data-aos="fade-up" data-aos-delay="100">Here’s what our clients say</p>
+    
+    <div class="row">
+      <div class="col-md-4" *ngFor="let testimonial of testimonials; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+        <div class="testimonial-card">
+          <div class="rating">
+            <i class="fas fa-star" *ngFor="let star of [].constructor(testimonial.rating)"></i>
+          </div>
+          <p class="quote">"{{ testimonial.comment }}"</p>
+          <div class="client-info">
+            <h4>{{ testimonial.name }}</h4>
+            <p>{{ testimonial.company }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+  <div class="container">
+    <div class="cta-content text-center">
+      <h2 data-aos="fade-up">Ready to Elevate Surgical Care?</h2>
+      <p data-aos="fade-up" data-aos-delay="100">Connect with our team to explore instruments that fit your specialty and workflow.</p>
+      <a routerLink="/contact" class="btn btn-primary btn-lg mt-4" data-aos="fade-up" data-aos-delay="200">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq bg-light">
+  <div class="container">
+    <h2 class="section-title text-center" data-aos="fade-up">Frequently Asked Questions</h2>
+    <p class="text-center lead mb-5" data-aos="fade-up" data-aos-delay="100">Find answers to common questions about our services</p>
+    
+    <div class="accordion custom-accordion">
+      <div class="accordion-item" *ngFor="let item of faqItems; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+        <h3 class="accordion-header">
+          <button class="accordion-button" [class.collapsed]="!isFaqActive(i)" (click)="toggleFaq(i)" type="button" aria-expanded="true">
+            {{ item.question }}
+          </button>
+        </h3>
+        <div class="accordion-collapse" [class.show]="isFaqActive(i)">
+          <div class="accordion-body">
+            <p>{{ item.answer }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

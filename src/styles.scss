@@ -1,0 +1,173 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'styles/variables';
+@import 'styles/mixins';
+@import 'styles/effects';
+@import 'styles/typography';
+@import './styles/fix-layout.scss';
+$font-family-base: 'Roboto', sans-serif;
+// Primary Colors - Premium teal/navy palette
+$primary: #003a58;       // Deep navy-teal
+$primary-light: #2a5f79; // Harmonized lighter shade
+$primary-lighter: #4f7f94; // Even lighter shade
+$primary-lightest: #a6c0cd; // Soft pastel for backgrounds
+$primary-dark: #00263a;  // Darker shade for emphasis
+
+$secondary: #00999c;      // Vibrant teal accent
+$secondary-light: #26b3b5; // Harmonized lighter teal
+$secondary-lighter: #6bcfd1; // Even lighter teal
+$secondary-lightest: #b9ebec; // Soft UI fills
+$secondary-dark: #007275;  // Darker teal for contrast
+
+// Neutral Colors - Cool, professional grays tuned for the theme
+$neutral-dark: #3b4248;
+$neutral-medium: #8a949c;
+$neutral-light: #b3bcc2;
+$neutral-lighter: #d7dee2;
+$neutral-lightest: #f4f7f9;
+
+// Additional Professional Colors
+$accent: #264b55;       // Deep teal-gray for headings/links
+$success: #1e9e68;      // Accessible success
+$warning: #c98200;      // Refined amber
+$error: #c23b3b;        // Refined error
+$info: #2aa6c2;         // Info complementary to secondary
+
+// Background Colors
+$background-primary: #ffffff;
+$background-secondary: #f4f7f9;
+$background-tertiary: #e8eef1;
+
+// Text Colors
+$text-primary: $accent;
+$text-secondary: $neutral-dark;
+$text-light: $neutral-medium;
+$text-white: #ffffff;
+
+// Border Colors
+$border-light: $neutral-lighter;
+$border-medium: $neutral-medium;
+$border-dark: $neutral-dark;
+
+// Shadow Colors
+$shadow-color: rgba(0, 0, 0, 0.12);
+$shadow-color-dark: rgba(0, 0, 0, 0.2);
+
+// Export variables for use in components
+:export {
+  primary: $primary;
+  primaryLight: $primary-light;
+  primaryLighter: $primary-lighter;
+  primaryLightest: $primary-lightest;
+  secondary: $secondary;
+  secondaryLight: $secondary-light;
+  secondaryLighter: $secondary-lighter;
+  secondaryLightest: $secondary-lightest;
+  neutralDark: $neutral-dark;
+  neutralMedium: $neutral-medium;
+  neutralLight: $neutral-light;
+  neutralLighter: $neutral-lighter;
+  neutralLightest: $neutral-lightest;
+}
+
+// Global styles
+body {
+  color: $text-primary;
+  background: $background-primary;
+  font-family: $font-body;
+  font-weight: $weight-regular;
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  &.mobile-menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  color: $text-primary;
+  font-family: $font-primary;
+  font-weight: $weight-bold;
+  line-height: $line-height-tight;
+  letter-spacing: $letter-spacing-tight;
+  margin: 0 0 1rem;
+}
+
+h1 {
+  font-size: $font-size-4xl;
+  font-weight: $weight-extrabold;
+}
+
+h2 {
+  font-size: $font-size-3xl;
+}
+
+h3 {
+  font-size: $font-size-2xl;
+}
+
+h4 {
+  font-size: $font-size-xl;
+}
+
+h5 {
+  font-size: $font-size-lg;
+}
+
+h6 {
+  font-size: $font-size-base;
+}
+
+a {
+  color: $primary;
+  font-weight: $weight-medium;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: $primary-light;
+  }
+}
+
+// Utility classes
+.text-primary { color: $primary; }
+.text-secondary { color: $secondary; }
+.bg-primary { background-color: $primary; }
+.bg-secondary { background-color: $secondary; }
+.text-uppercase { text-transform: uppercase; }
+.text-bold { font-weight: $weight-bold; }
+.text-semibold { font-weight: $weight-semibold; }
+.text-medium { font-weight: $weight-medium; }
+.letter-spacing-wide { letter-spacing: $letter-spacing-wide; }
+
+// Product Typography Classes
+.product-title {
+  font-family: $font-secondary;
+  font-weight: $weight-bold;
+  font-size: $font-size-2xl;
+  letter-spacing: $letter-spacing-tight;
+  color: $primary-dark;
+  text-transform: uppercase;
+}
+
+.product-description {
+  font-family: $font-body;
+  font-size: $font-size-base;
+  line-height: $line-height-relaxed;
+  color: $text-secondary;
+}
+
+.section-title {
+  font-family: $font-primary;
+  font-weight: $weight-bold;
+  font-size: $font-size-3xl;
+  letter-spacing: $letter-spacing-tight;
+  text-transform: uppercase;
+  color: $primary-dark;
+  margin-bottom: 2rem;
+}
+
