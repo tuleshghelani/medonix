@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.shreeganeshcolouranodize.com/sitemap.xml 
+Sitemap: https://www.medonixsurgitech.com/sitemap.xml 
