@@ -13,21 +13,28 @@
   margin: 0;
   padding: 0;
   
-  // Mobile optimizations
+  // Mobile optimizations for full image visibility
   @media (max-width: 768px) {
     height: 100vh;
     min-height: 500px;
   }
   
   @media (max-width: 480px) {
+    height: 30vh;
+    // min-height: 100vh;
+  }
+  
+  // For landscape mobile orientation
+  @media (max-width: 768px) and (orientation: landscape) {
     height: 100vh;
-    min-height: 400px;
+    // min-height: 100vh;
   }
 
   .hero-slider {
     position: relative;
     height: 100%;
     width: 100%;
+    object-fit: cover;
 
     .slide {
       position: absolute;
@@ -37,6 +44,7 @@
       height: 100%;
       opacity: 0;
       transition: opacity 1s ease;
+      object-fit: cover;
 
       &.active {
         opacity: 1;
@@ -52,18 +60,22 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        background-attachment: scroll;
+        object-fit: cover;
         
-        // Ensure full coverage on all devices
+        // Ensure full coverage on all devices for 1920x1080 images
         @media (max-width: 768px) {
           background-size: cover;
           background-position: center center;
           background-attachment: scroll;
+          // min-height: 100vh;
         }
         
         @media (max-width: 480px) {
-          background-size: cover;
+          background-size: contain;
           background-position: center center;
           background-attachment: scroll;
+          // min-height: 100vh;
         }
         
         // Extra small devices
@@ -71,7 +83,14 @@
           background-size: cover;
           background-position: center center;
           background-attachment: scroll;
+          // min-height: 100vh;
         }
+        
+        // For very wide screens, ensure proper aspect ratio
+        // @media (min-width: 1920px) {
+        //   background-size: contain;
+        //   background-position: center center;
+        // }
       }
     }
 
