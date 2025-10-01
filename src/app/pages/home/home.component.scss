@@ -8,10 +8,26 @@
   height: 100vh;
   min-height: 600px;
   overflow: hidden;
+  width: 100%;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  
+  // Mobile optimizations
+  @media (max-width: 768px) {
+    height: 100vh;
+    min-height: 500px;
+  }
+  
+  @media (max-width: 480px) {
+    height: 100vh;
+    min-height: 400px;
+  }
 
   .hero-slider {
     position: relative;
     height: 100%;
+    width: 100%;
 
     .slide {
       position: absolute;
@@ -27,41 +43,6 @@
         z-index: 1;
       }
 
-      .slide-content {
-        position: relative;
-        z-index: 2;
-        max-width: 650px;
-        padding: 0 20px;
-        margin-left: 10%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        color: $text-light;
-
-        h1 {
-          font-size: 3.5rem;
-          font-weight: 700;
-          margin-bottom: 1.5rem;
-          line-height: 1.2;
-          color: #fff;
-
-          @media (max-width: 768px) {
-            font-size: 2.5rem;
-          }
-        }
-
-        p {
-          font-size: 1.25rem;
-          margin-bottom: 2rem;
-          color: #fff;
-
-          @media (max-width: 768px) {
-            font-size: 1rem;
-          }
-        }
-      }
-
       .bg-image {
         position: absolute;
         top: 0;
@@ -70,16 +51,27 @@
         height: 100%;
         background-size: cover;
         background-position: center;
-      }
-
-      .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
-        z-index: 1;
+        background-repeat: no-repeat;
+        
+        // Ensure full coverage on all devices
+        @media (max-width: 768px) {
+          background-size: cover;
+          background-position: center center;
+          background-attachment: scroll;
+        }
+        
+        @media (max-width: 480px) {
+          background-size: cover;
+          background-position: center center;
+          background-attachment: scroll;
+        }
+        
+        // Extra small devices
+        @media (max-width: 360px) {
+          background-size: cover;
+          background-position: center center;
+          background-attachment: scroll;
+        }
       }
     }
 
@@ -91,11 +83,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      z-index: 3;
+      z-index: 10;
+      padding: 0 20px;
 
       .prev, .next {
         background: rgba(255, 255, 255, 0.2);
-        color: white;
+        color: $primary-dark;
         border: none;
         border-radius: 50%;
         width: 40px;
@@ -105,35 +98,74 @@
         justify-content: center;
         cursor: pointer;
         transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
 
         &:hover {
           background: rgba(255, 255, 255, 0.3);
+          transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+          width: 35px;
+          height: 35px;
+        }
+
+        @media (max-width: 480px) {
+          width: 30px;
+          height: 30px;
         }
       }
 
       .indicators {
         display: flex;
         margin: 0 15px;
+        gap: 8px;
 
         button {
           width: 12px;
           height: 12px;
           border-radius: 50%;
-          border: 2px solid white;
+          border: 2px solid $primary-dark;
           background: transparent;
-          margin: 0 5px;
           padding: 0;
           cursor: pointer;
           transition: all 0.3s ease;
+          backdrop-filter: blur(5px);
 
           &.active {
-            background: white;
+            background: $primary-dark;
             transform: scale(1.2);
+          }
+
+          @media (max-width: 768px) {
+            width: 10px;
+            height: 10px;
+          }
+
+          @media (max-width: 480px) {
+            width: 8px;
+            height: 8px;
           }
         }
       }
+
+      @media (max-width: 768px) {
+        bottom: 30px;
+      }
+
+      @media (max-width: 480px) {
+        bottom: 20px;
+        padding: 0 15px;
+      }
     }
   }
+}
+
+// Ensure proper spacing after hero section
+.hero + section {
+  margin-top: 0;
+  position: relative;
+  z-index: 2;
 }
 
 // About Section

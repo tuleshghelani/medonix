@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   private platformId = inject(PLATFORM_ID);
   
   currentSlide = 0;
-  slides = [0, 1, 2, 3]; // Four slides for our main services
+  slides = [0, 1, 2]; // Three slides for our main services
   showDesignContent = false;
   
   // Track active FAQ items
@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
     },
     {
       question: 'What is the typical lead time for orders?',
-      answer: 'Standard products ship in 2–4 weeks depending on quantities. Customized/OEM orders are scheduled after design freeze and validation; expedited options are available.'
+      answer: 'Standard products ship in 2-4 weeks depending on quantities. Customized/OEM orders are scheduled after design freeze and validation; expedited options are available.'
     },
     {
       question: 'How can I request a catalogue or samples?',
