@@ -1,0 +1,790 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+@import '../../../styles.scss';
+
+// About Hero Section
+.about-hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, rgba($primary, 0.95), rgba($primary-dark, 0.9)), url('/assets/home/background-1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: $text-white;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    min-height: 70vh;
+    background-attachment: scroll;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 80px 0;
+
+    .hero-text {
+      max-width: 600px;
+
+      h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: $text-white;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        @media (max-width: 768px) {
+          font-size: 2.5rem;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 2rem;
+        }
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin-bottom: 1.5rem;
+        color: rgba($text-white, 0.9);
+
+        @media (max-width: 768px) {
+          font-size: 1.2rem;
+        }
+      }
+
+      .hero-divider {
+        width: 80px;
+        height: 4px;
+        background: $secondary-light;
+        margin: 0 0 2rem 0;
+      }
+
+      .hero-description {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: rgba($text-white, 0.85);
+        margin-bottom: 0;
+
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .hero-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.3;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+// Company Overview Section
+.company-overview {
+  padding: 100px 0;
+
+  .section-title {
+    margin-bottom: 1.5rem;
+    color: $primary-dark;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: $primary;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    color: $text-secondary;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 20px;
+      background: rgba($primary-lightest, 0.3);
+      border-radius: 10px;
+      border: 1px solid $border-light;
+
+      h3 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: $primary;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: $text-secondary;
+        margin: 0;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .overview-image {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-height: 500px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+  }
+}
+
+// Mission & Vision Section
+.mission-vision {
+  padding: 100px 0;
+
+  .mission-card, .vision-card {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid $border-light;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+
+    .card-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, $secondary-lightest, $primary-lightest);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 20px rgba($primary, 0.2);
+
+      i {
+        font-size: 32px;
+        color: $primary-dark;
+      }
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: $primary-dark;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: $text-secondary;
+      margin: 0;
+    }
+  }
+}
+
+// Core Values Section
+.core-values {
+  padding: 100px 0;
+
+  .value-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    height: 100%;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid $border-light;
+    margin-bottom: 30px;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    .value-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, $secondary-lightest, $primary-lightest);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      box-shadow: 0 6px 15px rgba($primary, 0.15);
+
+      i {
+        font-size: 28px;
+        color: $primary-dark;
+      }
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: $primary-dark;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: $text-secondary;
+      margin: 0;
+    }
+  }
+}
+
+// Quality Assurance Section
+.quality-assurance {
+  padding: 100px 0;
+
+  .quality-features {
+    margin-top: 40px;
+
+    .quality-feature {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 25px;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateX(5px);
+      }
+
+      .feature-icon {
+        width: 50px;
+        height: 50px;
+        background: $secondary-lightest;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        flex-shrink: 0;
+
+        i {
+          font-size: 20px;
+          color: $primary;
+        }
+      }
+
+      .feature-content {
+        h4 {
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: $primary-dark;
+          margin-bottom: 8px;
+        }
+
+        p {
+          font-size: 0.95rem;
+          line-height: 1.6;
+          color: $text-secondary;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .quality-image {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-height: 500px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+  }
+}
+
+// Technology & Innovation Section
+.technology-innovation {
+  padding: 100px 0;
+
+  .innovation-content {
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: $primary-dark;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: $text-secondary;
+      margin-bottom: 30px;
+    }
+
+    .innovation-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 1rem;
+        color: $text-secondary;
+
+        i {
+          color: $primary;
+          margin-right: 12px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .innovation-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      border: 1px solid $border-light;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .stat-number {
+        font-size: 2rem;
+        font-weight: 700;
+        color: $primary;
+        margin-bottom: 8px;
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: $text-secondary;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+// Team Section
+.team {
+  padding: 100px 0;
+
+  .team-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+
+    .member-image {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+    }
+
+    &:hover .member-image img {
+      transform: scale(1.05);
+    }
+
+    .member-info {
+      padding: 25px;
+
+      h4 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: $primary-dark;
+        margin-bottom: 5px;
+      }
+
+      .position {
+        font-size: 0.9rem;
+        color: $primary;
+        font-weight: 500;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .bio {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: $text-secondary;
+        margin-bottom: 20px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+
+        a {
+          width: 35px;
+          height: 35px;
+          background: $primary-lightest;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $primary;
+          text-decoration: none;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: $primary;
+            color: white;
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Certifications Section
+.certifications {
+  padding: 100px 0;
+
+  .certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+
+    .cert-item {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid $border-light;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      }
+
+      .cert-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, $secondary-lightest, $primary-lightest);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        box-shadow: 0 6px 15px rgba($primary, 0.15);
+
+        i {
+          font-size: 32px;
+          color: $primary-dark;
+        }
+      }
+
+      h4 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: $primary-dark;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: $text-secondary;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// CTA Section
+.cta {
+  padding: 100px 0;
+  background: linear-gradient(rgba($primary-dark, 0.9), rgba($primary-dark, 0.7)), url('/assets/home/background-1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  @media (max-width: 768px) {
+    background-attachment: scroll;
+  }
+
+  .cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+
+    h2 {
+      color: white;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+
+    p {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      @media (max-width: 480px) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        padding: 12px 30px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &.btn-primary {
+          background: white;
+          color: $primary-dark;
+          border: 2px solid white;
+
+          &:hover {
+            background: rgba(255,255,255,0.9);
+            transform: translateY(-2px);
+          }
+        }
+
+        &.btn-outline {
+          background: transparent;
+          color: white;
+          border: 2px solid white;
+
+          &:hover {
+            background: white;
+            color: $primary-dark;
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 991px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .company-overview, .mission-vision, .core-values, .quality-assurance, 
+  .technology-innovation, .team, .certifications, .cta {
+    padding: 80px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .company-overview, .mission-vision, .core-values, .quality-assurance, 
+  .technology-innovation, .team, .certifications, .cta {
+    padding: 60px 0;
+  }
+
+  .mission-card, .vision-card {
+    padding: 30px;
+  }
+
+  .value-card, .team-card {
+    margin-bottom: 30px;
+  }
+
+  .innovation-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Common section styling
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: $primary-dark;
+
+  &.text-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.bg-light {
+  background-color: $background-secondary;
+}
+
+// Containers and rows
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-right: -15px;
+  margin-left: -15px;
+
+  [class*="col-"] {
+    padding-right: 15px;
+    padding-left: 15px;
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.col-md-4 {
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 33.333333%;
+    max-width: 33.333333%;
+    flex: 0 0 auto;
+  }
+}
+
+.col-md-6 {
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 50%;
+    max-width: 50%;
+    flex: 0 0 auto;
+  }
+}
+
+// Utility classes
+.text-center {
+  text-align: center;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.mb-5 {
+  margin-bottom: 3rem;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+// AOS animation adjustment
+[data-aos] {
+  pointer-events: none;
+
+  &.aos-animate {
+    pointer-events: auto;
+  }
+}
