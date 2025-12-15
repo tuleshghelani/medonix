@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
   // FAQ items (Surgitech-focused)
   faqItems = [
     {
-      question: 'What types of surgical instruments does Medonix offer?',
+      question: 'What types of surgical solutions does Medonix offer?',
       answer: 'We design and manufacture Surgitech products across General Surgery, Orthopedic, and ENT & Microsurgery, focusing on precision, safety, and clinician-centric ergonomics.'
     },
     {
