@@ -269,13 +269,48 @@ $large-desktop: 1200px;
     .product-category {
       margin-bottom: 1.5rem;
       
-      strong {
-        color: $footer-title-text;
-        font-size: 1.1rem;
-        font-weight: 600;
-        display: block;
-        margin-bottom: 0.75rem;
-        letter-spacing: 0.01em;
+      .category-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        user-select: none;
+        padding: 0.5rem 0;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          color: $primary;
+        }
+        
+        &:focus {
+          outline: 2px solid $primary;
+          outline-offset: 2px;
+          border-radius: 4px;
+        }
+        
+        strong {
+          color: $footer-title-text;
+          font-size: 1.1rem;
+          font-weight: 600;
+          letter-spacing: 0.01em;
+          flex: 1;
+          transition: color 0.3s ease;
+        }
+        
+        i {
+          color: $primary;
+          font-size: 0.75rem;
+          transition: transform 0.3s ease;
+          margin-left: 0.5rem;
+          
+          &.expanded {
+            transform: rotate(180deg);
+          }
+        }
+        
+        &:hover strong {
+          color: $primary;
+        }
       }
 
       .product-sublist {
@@ -283,9 +318,19 @@ $large-desktop: 1200px;
         padding: 0;
         margin: 0;
         padding-left: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.3s ease, opacity 0.3s ease, padding-top 0.3s ease;
         
         @include mobile {
           padding-left: 0;
+        }
+        
+        &.expanded {
+          max-height: 500px;
+          opacity: 1;
+          padding-top: 0.75rem;
         }
         
         li {

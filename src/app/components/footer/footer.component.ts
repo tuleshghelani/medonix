@@ -11,4 +11,15 @@ import { CommonModule } from '@angular/common';
 })
 export class FooterComponent {
   currentYear: number = new Date().getFullYear();
+  
+  // Track which product categories are expanded
+  expandedCategories: { [key: string]: boolean } = {};
+
+  toggleCategory(categoryKey: string): void {
+    this.expandedCategories[categoryKey] = !this.expandedCategories[categoryKey];
+  }
+
+  isCategoryExpanded(categoryKey: string): boolean {
+    return this.expandedCategories[categoryKey] || false;
+  }
 }

@@ -36,8 +36,11 @@
         <h3 class="footer-title">Our Products</h3>
         <ul class="footer-list">
           <li class="product-category">
-            <strong>Trauma Implants – Product List</strong>
-            <ul class="product-sublist">
+            <div class="category-header" (click)="toggleCategory('trauma')" (keydown.enter)="toggleCategory('trauma')" (keydown.space)="toggleCategory('trauma'); $event.preventDefault()" [attr.aria-expanded]="isCategoryExpanded('trauma')" role="button" tabindex="0">
+              <strong>Trauma Implants</strong>
+              <i class="fas fa-chevron-down" [class.expanded]="isCategoryExpanded('trauma')"></i>
+            </div>
+            <ul class="product-sublist" [class.expanded]="isCategoryExpanded('trauma')">
               <li><a href="/products/trauma-implants/bone-plates" itemprop="url"><span itemprop="name">Bone Plates</span></a></li>
               <li><a href="/products/trauma-implants/bone-screws" itemprop="url"><span itemprop="name">Bone Screws</span></a></li>
               <li><a href="/products/trauma-implants/intramedullary-nails" itemprop="url"><span itemprop="name">Intramedullary Nails</span></a></li>
@@ -47,8 +50,11 @@
             </ul>
           </li>
           <li class="product-category">
-            <strong>Arthroscopy Implants – Product List</strong>
-            <ul class="product-sublist">
+            <div class="category-header" (click)="toggleCategory('arthroscopy')" (keydown.enter)="toggleCategory('arthroscopy')" (keydown.space)="toggleCategory('arthroscopy'); $event.preventDefault()" [attr.aria-expanded]="isCategoryExpanded('arthroscopy')" role="button" tabindex="0">
+              <strong>Arthroscopy Implants</strong>
+              <i class="fas fa-chevron-down" [class.expanded]="isCategoryExpanded('arthroscopy')"></i>
+            </div>
+            <ul class="product-sublist" [class.expanded]="isCategoryExpanded('arthroscopy')">
               <li><a href="/products/arthroscopy-implants/suture-anchors" itemprop="url"><span itemprop="name">Suture Anchors</span></a></li>
               <li><a href="/products/arthroscopy-implants/interference-screws" itemprop="url"><span itemprop="name">Interference Screws</span></a></li>
               <li><a href="/products/arthroscopy-implants/fixation-devices" itemprop="url"><span itemprop="name">Fixation Devices</span></a></li>
@@ -58,8 +64,11 @@
             </ul>
           </li>
           <li class="product-category">
-            <strong>Instruments & Devices</strong>
-            <ul class="product-sublist">
+            <div class="category-header" (click)="toggleCategory('instruments')" (keydown.enter)="toggleCategory('instruments')" (keydown.space)="toggleCategory('instruments'); $event.preventDefault()" [attr.aria-expanded]="isCategoryExpanded('instruments')" role="button" tabindex="0">
+              <strong>Instruments & Devices</strong>
+              <i class="fas fa-chevron-down" [class.expanded]="isCategoryExpanded('instruments')"></i>
+            </div>
+            <ul class="product-sublist" [class.expanded]="isCategoryExpanded('instruments')">
               <li><a href="/products/instruments-devices/instrument-sets-trauma" itemprop="url"><span itemprop="name">Instrument Sets for Trauma</span></a></li>
               <li><a href="/products/instruments-devices/arthroscopy-instrument-kits" itemprop="url"><span itemprop="name">Arthroscopy Instrument Kits</span></a></li>
               <li><a href="/products/instruments-devices/sterile-disposable-arthroscopy-accessories" itemprop="url"><span itemprop="name">Sterile Disposable Arthroscopy Accessories</span></a></li>
