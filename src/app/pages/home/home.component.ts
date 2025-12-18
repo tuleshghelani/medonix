@@ -94,8 +94,8 @@ export class HomeComponent implements OnInit {
 
   // Define product type and list for the Products section
   products: { name: string; image: string; alt: string }[] = [
-    { name: 'product-1', image: 'assets/products/product-1.jpeg', alt: 'product-1' },
-    { name: 'product-2', image: 'assets/products/product-1.jpeg', alt: 'product-2' },
+    { name: 'Bone Screw', image: 'assets/products/Bone-Screw.jpeg', alt: 'Bone Screw' },
+    { name: 'Bone Locking Plate', image: 'assets/products/Bone-Locking-Plate.jpeg', alt: 'Bone Locking Plate' },
     { name: 'product-3', image: 'assets/products/product-1.jpeg', alt: 'product-3' },
     { name: 'product-4', image: 'assets/products/product-1.jpeg', alt: 'product-4' },
     { name: 'product-5', image: 'assets/products/product-1.jpeg', alt: 'product-5' },
