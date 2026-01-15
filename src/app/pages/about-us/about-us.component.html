@@ -174,24 +174,29 @@
     <h2 class="section-title text-center" data-aos="fade-up">Our Team</h2>
     <p class="text-center lead mb-5" data-aos="fade-up" data-aos-delay="100">Meet the experts behind our success</p>
     
-    <div class="row">
-      <div class="col-md-4" *ngFor="let member of teamMembers; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+    <div class="row team-row">
+      <div class="col-md-6 col-sm-12" *ngFor="let member of teamMembers; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 100" itemprop="itemListElement" itemscope itemtype="https://schema.org/Person">
         <div class="team-card">
-          <div class="member-image">
-            <img [src]="member.image" [alt]="member.name" loading="lazy" decoding="async">
+          <div class="card-branding">
+            <div class="brand-logo">
+              <img src="assets/logo/logo.png" alt="Medonix Logo" loading="lazy" decoding="async">
+            </div>
+            <div class="brand-name">
+              <h4>MEDONIX</h4>
+              <p class="brand-subtitle">SURGITECH PVT. LTD.</p>
+            </div>
           </div>
           <div class="member-info">
-            <h4>{{ member.name }}</h4>
-            <p class="position">{{ member.position }}</p>
-            <p class="bio">{{ member.bio }}</p>
-            <div class="social-links">
-              <a href="#" *ngIf="member.linkedin" aria-label="LinkedIn profile">
-                <i class="fab fa-linkedin"></i>
-              </a>
-              <a href="#" *ngIf="member.email" aria-label="Email contact">
-                <i class="fas fa-envelope"></i>
-              </a>
-            </div>
+            <h3 itemprop="name">{{ member.name }}</h3>
+            <p class="position" itemprop="jobTitle"><strong>{{ member.position }}</strong></p>
+          </div>
+          <div class="card-footer">
+            <a [href]="'mailto:' + member.email" 
+               [attr.aria-label]="'Email contact for ' + member.name"
+               class="email-button"
+               itemprop="email">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
       </div>

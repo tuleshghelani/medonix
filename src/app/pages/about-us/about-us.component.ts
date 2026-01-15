@@ -80,28 +80,16 @@ export class AboutUsComponent implements OnInit {
   // Team Members Data
   teamMembers = [
     {
-      name: 'Dr. Rajesh Patel',
-      position: 'Founder & CEO',
-      bio: 'With over 20 years of experience in medical device manufacturing, Dr. Patel leads our vision of revolutionizing surgical care through innovative technology.',
-      image: 'assets/home/surgitech-products-1.jpeg',
-      linkedin: '#',
-      email: 'rajesh@medonixsurgitech.com'
+      name: 'Jigar P. Manwar',
+      position: 'Director',
+      image: 'assets/logo/logo.png',
+      email: 'info@medonixsurgitech.com'
     },
     {
-      name: 'Priya Sharma',
-      position: 'Head of R&D',
-      bio: 'Priya oversees our research and development initiatives, ensuring our products meet the evolving needs of modern healthcare.',
-      image: 'assets/home/surgitech-products-2.jpeg',
-      linkedin: '#',
-      email: 'priya@medonixsurgitech.com'
-    },
-    {
-      name: 'Amit Kumar',
-      position: 'Quality Assurance Director',
-      bio: 'Amit ensures that every product meets our stringent quality standards and regulatory requirements.',
-      image: 'assets/home/surgitech-products-3.jpeg',
-      linkedin: '#',
-      email: 'amit@medonixsurgitech.com'
+      name: 'Hiten M. Viramgama',
+      position: 'Director',
+      image: 'assets/logo/logo.png',
+      email: 'info@medonixsurgitech.com'
     }
   ];
 
