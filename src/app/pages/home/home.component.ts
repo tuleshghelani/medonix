@@ -96,14 +96,11 @@ export class HomeComponent implements OnInit {
   products: { name: string; image: string; alt: string }[] = [
     { name: 'Bone Screw', image: 'assets/products/Bone-Screw.jpeg', alt: 'Bone Screw' },
     { name: 'Bone Locking Plate', image: 'assets/products/Bone-Locking-Plate.jpeg', alt: 'Bone Locking Plate' },
-    { name: 'product-3', image: 'assets/products/product-1.jpeg', alt: 'product-3' },
-    { name: 'product-4', image: 'assets/products/product-1.jpeg', alt: 'product-4' },
-    { name: 'product-5', image: 'assets/products/product-1.jpeg', alt: 'product-5' },
-    { name: 'product-6', image: 'assets/products/product-1.jpeg', alt: 'product-6' },
-    { name: 'product-7', image: 'assets/products/product-1.jpeg', alt: 'product-7' },
-    { name: 'product-8', image: 'assets/products/product-1.jpeg', alt: 'product-8' },
-    { name: 'product-9', image: 'assets/products/product-1.jpeg', alt: 'product-9' },
-    { name: 'product-10', image: 'assets/products/product-1.jpeg', alt: 'product-10' }
+    { name: '4.5mm Cortex Screw', image: 'assets/products/4.5mm-cortex-screw.png', alt: '4.5mm cortex screw, Medonix' },
+    { name: 'Long PFNA Nail', image: 'assets/products/long-pfna-nail.png', alt: 'Long PFNA nail 10mm x 340mm, Medonix' },
+    { name: 'PFNA GAMA Blade', image: 'assets/products/pfna-gama-blade.png', alt: 'PFNA GAMA blade 70mm, Medonix' },
+    { name: 'Proximal Femur', image: 'assets/products/proximal-femur.png', alt: 'Proximal femur plate, Medonix' },
+    { name: 'Tibia Nail', image: 'assets/products/tibia-nail.png', alt: 'Tibia nail 8mm x 300mm, Medonix' }
   ];
   
   constructor(
